@@ -12,12 +12,13 @@ class TreeNode {
 
 function count_paths(root, S) {
     let currentPath = [];
+    let pathCount;
     function count_paths_recursive(currentNode, S, currentPath) {
         if (currentNode === null) {
             return 0;
         }
         currentPath.push(currentNode.value);
-        let pathCount = 0;
+        pathCount = 0;
         let pathSum = 0;
         for (let i = currentPath.length-1; i >=0; i--) {
             pathSum += currentPath[i];
@@ -31,23 +32,24 @@ function count_paths(root, S) {
         return pathCount;
 
     }
-    return count_paths_recursive(root, S, currentPath);
+    count_paths_recursive(root, S, currentPath);
+    return pathCount;
 
 }
 
-// let root = new TreeNode(12);
-// root.left = new TreeNode(7);
-// root.right = new TreeNode(1)
-// root.left.left = new TreeNode(4)
-// root.right.left = new TreeNode(10)
-// root.right.right = new TreeNode(5)
+let root = new TreeNode(12);
+root.left = new TreeNode(7);
+root.right = new TreeNode(1)
+root.left.left = new TreeNode(4)
+root.right.left = new TreeNode(10)
+root.right.right = new TreeNode(5)
 
-let root = new TreeNode(1)
-root.left = new TreeNode(7)
-root.right = new TreeNode(9)
-root.left.left = new TreeNode(6)
-root.left.right = new TreeNode(5)
-root.right.left = new TreeNode(2)
-root.right.right = new TreeNode(3)
+// let root = new TreeNode(1)
+// root.left = new TreeNode(7)
+// root.right = new TreeNode(9)
+// root.left.left = new TreeNode(6)
+// root.left.right = new TreeNode(5)
+// root.right.left = new TreeNode(2)
+// root.right.right = new TreeNode(3)
 
-console.log(`Tree has paths: ${count_paths(root, 12)}`)
+console.log(`Tree has paths: ${count_paths(root, 11)}`)

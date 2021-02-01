@@ -29,7 +29,7 @@ class TreeNode {
             traverse_path(currentNode.left, pathSequence, stringSequence);
             traverse_path(currentNode.right, pathSequence, stringSequence);
         }
-        pathSequence.slice(0, -1);
+        // pathSequence.slice(0, -1);
     }
     traverse_path(root, pathSequence, stringSequence);
     return found;
