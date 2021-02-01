@@ -12,7 +12,6 @@ function find_subsets(nums) {
     let startIndex = 0;
     let endIndex = 0;
     for (let i = 0; i < nums.length; i++) {
-        startIndex = 0;
         if (i > 0 && nums[i] === nums[i-1]) {
             startIndex = endIndex;
         }
@@ -29,7 +28,7 @@ function find_subsets(nums) {
 }
 
 console.log('Here is the list of subsets: ');
-let result = find_subsets([1, 5, 3, 3]);
+let result = find_subsets([1, 3, 3]);
 result.forEach((subset) => {
   console.log(subset);
 });
